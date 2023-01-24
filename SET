@@ -1,0 +1,21 @@
+//SET removes duplicate
+//MULTISET  contains duplicate .They are unsorted
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    set<int>s;
+    s.insert(10);
+    s.insert(20);
+    s.insert(30);
+    s.insert(40);
+    s.emplace(50);
+    s.erase(30);
+    for(auto it:s){
+        cout<<it<<" ";
+    }
+    auto itt=s.find(20); //true
+    if(itt!=s.end()) cout<<"true";
+    else cout<<"false";
+    //s.erase(s.find(1),s.find(1)+2) //erases frm that range
+    return 0;
+}
