@@ -1,0 +1,128 @@
+
+**RIGHT SHIFT(>>)--->deletes right bits and adds n zeros to left( num/2^n if rightshift by n)
+**LEFT SHIFT(<<)----->deletes left bits and adds n zeros to right(num*2^n if leftshift by n)
+EXAMPLE:10000101---->right shift by 2=00100001(deletes right 2 bits and adds 2 zeros at left)
+                ----->left shift by 2=00010100(deletes left 2 bits and adds 2 zeros at right)
+                      1010>>1---->0101(right side 0 will be gone) and then again rightshift---->0011
+                      1010<<1--------->0100(leftside 0 will be gone) and again leftshift --->1000   
+
+**right shift operator(>>)----->num/2  if rightshift by 1 -->num/2^n if rightshift by n
+***leftshift opertor(<<)----->num*2 if leftshift by 1 ---> num*2^n if leftshift by n
+
+
+      AND   OR  XOR(^)
+T T    T    T    F
+T F    F    T    T
+F T    F    T    T
+F F    F    F    F
+
+** To make a set bit use OR operation
+**To know set bit position use AND
+
+
+                                   **********SET,UNSET AND SHUFFLE***********
+int n=5,k=2;
+    cout<< (n | (1 << (k - 1)))<<endl; //to set a bit as setbit
+    cout<< (n & (~(1 << (k - 1))))<<endl; //to clear a set bit
+    cout<< (n ^ (1 << (k - 1)));//to toggle 
+ 
+                                 *****program to find number of setbits(1's) in a string****
+#include<iostream>
+using namespace std;
+int main(){
+int n;
+int count=0;
+cin>>n;
+while(n>0){
+if(n&1==1){
+count++
+}
+n=n>>1;
+}
+cout>>count;
+return 0;
+}
+
+
+                                   *** DECIMAL TO BINARY USING BIT MANUPULATION*****
+#include <bits/stdc++.h>
+using namespace std;
+void bin(int n)
+{
+   for(int i=10;i>=0;i--){ //size of output bit is 10 bits (= in for loop is imp)
+       cout<<((n>>i)&1);
+   } 
+   cout<<endl;
+}
+int main() {
+   int n;
+   cin>>n;
+   bin(5); //000000101
+   for(int i=0;i<8;i++){
+       bin(i);
+   }
+    return 0;
+}
+o/p:
+6
+00000000000
+00000000001
+00000000010
+00000000011
+00000000100
+00000000101
+00000000110
+00000000111
+ 
+ 
+                                  ****BINARY REPRESENTATION OF CHARACTERS*******
+ #include <bits/stdc++.h>
+using namespace std;
+void bin(int n)
+{
+   for(int i=10;i>=0;i--){ //size of output bit is 10 bits (= in for loop is imp)
+       cout<<((n>>i)&1);
+   } 
+   cout<<endl;
+}
+int main() {
+   for(char ch='A';ch<'E';ch++){ // A-ascii 65
+       cout<<ch<<endl;
+       bin(ch);
+   }
+}
+o/p:
+A
+00001000001
+B
+00001000010
+C
+00001000011
+D
+00001000100
+
+
+                                       ************LOWER TO UPPER AND UPPER TO LOWER*****
+int main() {
+    char ch='A'; //TO lower case--> set the bit
+   char a=(ch|(1<<5));
+   cout<<a<<endl; //a
+   char c='c'; //To upper case --->unset the bit
+   char d=(c&(~(1<<5))); //C
+   cout<<d;
+}
+
+****Binary representation of 1<<5 is " "(space)
+****Binary representatio of 1>>5 is "_"(underscore)
+
+**If a bit contains a set bit (n&1==1)(contains last digit 0) it is even else it is odd
+**POWER OF 2  can be calculated by n&(n-1) when done contains only one single setbit
+
+
+
+
+
+
+
+
+
