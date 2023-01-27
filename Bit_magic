@@ -22,9 +22,9 @@ F F    F    F    F
 
                                    **********SET,UNSET AND SHUFFLE***********
 int n=5,k=2;
-    cout<< (n | (1 << (k - 1)))<<endl; //to set a bit as setbit
-    cout<< (n & (~(1 << (k - 1))))<<endl; //to clear a set bit
-    cout<< (n ^ (1 << (k - 1)));//to toggle 
+    cout<< (n | (1 << (k)))<<endl; //to set a bit as setbit
+    cout<< (n & (~(1 << (k))))<<endl; //to clear a set bit
+    cout<< (n ^ (1 << (k)));//to toggle 
  
                                  *****program to find number of setbits(1's) in a string****
 #include<iostream>
