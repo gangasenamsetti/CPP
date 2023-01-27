@@ -119,6 +119,20 @@ int main() {
     else return "even";
 **POWER OF 2  can be calculated by n&(n-1) when done contains only one single setbit
 
+                                        ****FIRST SET BIT*********
+        if(n==0) return 0;
+        int c=1;
+        while(n>0)
+        {
+            if(n&1){
+                return c;
+            }
+            c+=1;
+            n=n>>1;
+            
+        }
+        return -1;
+
 
 
 
