@@ -20,7 +20,10 @@ F F    F    F    F
 **To know set bit position use AND
 
 
+** To get rightmost bit we use x&~(x-1)
+
                                    **********SET,UNSET AND SHUFFLE***********
+**To unset right most setbit n&(n-1)
 int n=5,k=2;
     cout<< (n | (1 << (k)))<<endl; //to set a bit as setbit
     cout<< (n & (~(1 << (k))))<<endl; //to clear a set bit
