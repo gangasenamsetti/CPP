@@ -132,6 +132,32 @@ int main() {
             
         }
         return -1;
+          
+          
+                                         ****EVEY ELEMENT OCCURS TWICE EXCEPT ONE****
+**performing XOR operation removes similar elements and returns single element
+#include <bits/stdc++.h>
+using namespace std;
+int twice(int n,int arr[]) //Every number occurs twice but one number
+{
+    int ans=0;
+    for(int i=0;i<n;i++){
+    ans^=arr[i];
+}
+return ans;
+}
+int main() {
+    
+int n;
+cin>>n;
+int arr[n];
+for(int i=0;i<n;i++){
+    cin>>arr[i];
+}
+cout<<twice(n,arr);
+
+    return 0;
+}
 
 
 
