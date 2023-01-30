@@ -22,7 +22,9 @@ F F    F    F    F
 
 **** To get rightmost bit we use x&~(x-1)
 ****To get position of right most set bit  
-     return log2(n & -n) + 1; //
+     return log2(n & -n) + 1; 
+**TO CHECK KTH BIT IS SET OR NOT
+   (n & (1 << k)) //if the result is non zero it is set then it is not set
 
 
                                                      ***POSITION OF SET BITS in 32 bit format***
