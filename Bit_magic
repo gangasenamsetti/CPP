@@ -20,7 +20,20 @@ F F    F    F    F
 **To know set bit position use AND
 
 
-** To get rightmost bit we use x&~(x-1)
+**** To get rightmost bit we use x&~(x-1)
+****To get position of right most set bit  
+     return log2(n & -n) + 1; //
+
+
+                                                     ***POSITION OF SET BITS in 32 bit format***
+  for(int i=31;i>=0;i--){
+        if((n&(1<<i))){
+            cout<<i;
+            //break; this will print only the first position
+        }
+    }
+    O/P:25 //11001
+        4 3 0 //contains setbits at 4,3,0 index positions
 
                                    **********SET,UNSET AND SHUFFLE***********
 **To unset right most setbit n&(n-1)
