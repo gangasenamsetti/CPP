@@ -20,6 +20,12 @@ F F    F    F    F
 **To know set bit position use AND
 
 
+                                         ****POWER OF TWO********
+ if((n&n-1)==0 && n!=0) return true;
+ else return false;
+
+
+
 **** To get rightmost bit we use x&~(x-1)
 ****To get position of right most set bit  
      return log2(n & -n) + 1; 
