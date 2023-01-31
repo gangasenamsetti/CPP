@@ -40,7 +40,7 @@ output:
 using namespace std;
 void subsets(int n,int arr[])
 {
-    for(int i=0;i<(1<<n);i++){
+    for(int i=0;i<(1<<n);i++){ //(1<<n) means 2*n  that can be written as pow(2,n)
         for(int j=0;j<n;j++){
             if(i&(1<<j)){
                 cout<<arr[j]<<" ";
@@ -69,5 +69,7 @@ OUTPUT: //includes empty space also
 1 3 
 2 3 
 1 2 3 
+
+
 
 
