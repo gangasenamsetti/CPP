@@ -30,6 +30,16 @@ bool palin(string s,int i,int j)
     if(s[i]!=s[j]) return false;
     return palin(s,i+1,j-1);
 }
+int nth_fib(int n)
+{
+    if(n<=1) return n;
+    return nth_fib(n-1)+nth_fib(n-2);
+}
+int sum_of_n_numbers(int n)
+{
+    if(n<0) return 0;
+    return n+sum_of_n_numbers(n-1);
+}
 int main() {
     // Write C++ code here
     print(1);
@@ -42,6 +52,9 @@ int main() {
     printing1(1);
     cout<<endl;
     printing2(10);
+    cout<<sum_of_n_numbers(5); //15
+    cout<<endl;
+    cout<<nth_fib(10); // 0 1 1 2 3 5 8 13 21 34 55 
     return 0;
 }
 
