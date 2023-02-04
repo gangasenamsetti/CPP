@@ -1,0 +1,7 @@
+                ***STRINGS***
+//METHOD1
+  string s;
+  v.push_back(i);
+//METHOD 2
+  string s="";
+  s+=res;
