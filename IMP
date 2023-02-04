@@ -5,3 +5,8 @@
 //METHOD 2
   string s="";
   s+=res;
+  
+             **MAPS***
+**In map,mp[s[i]]-->frequency or anything and s[i]--->element
+**mp[s[i]]+=1 -->frequency
+  mp[value]+=value
