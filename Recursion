@@ -150,3 +150,41 @@ o/p:
 1 4 2 4 6
 1
 3
+
+
+                                          ****COMBINATION_SUMM LEETCODE PROBLEM NO39 USING RECURSION*****
+                                          
+#include <bits/stdc++.h>
+using namespace  std;
+void combination_sum(int ind,int n,int arr[],vector<int>ds,int target)
+{
+  if(ind==n)
+  {
+    if(target==0){
+        for(int i=0;i<ds.size();i++) cout<<ds[i]<<" ";
+        cout<<"\n";
+     }
+    return;
+  }
+    if(target>=arr[ind])
+    {
+        ds.push_back(arr[ind]);
+        combination_sum(ind,n,arr,ds,target-arr[ind]);
+        ds.pop_back();
+    }
+    combination_sum(ind+1,n,arr,ds,target);
+}
+int main() {
+    // Write C++ code here
+   int arr[]={2,3,6,7};
+   int n=sizeof(arr)/sizeof(int);
+   int target=7;
+   vector<int>ds;
+   combination_sum(0,n,arr,ds,target);
+    return 0;
+}
+
+O/P:
+2 2 3 
+7
+
