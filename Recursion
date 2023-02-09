@@ -195,3 +195,47 @@ output:
 2 2 3 
 7
 
+                                            ***PERMUTATIONS OF A STRING***
+#include <bits/stdc++.h>
+using namespace std;
+void permutations(string s,int n,vector<char>&temp,int freq[])
+{
+    if(temp.size()==n){
+        for(auto it:temp) cout<<it;
+        cout<<endl;
+        
+        return;
+    }
+    for(int i=0;i<n;i++){
+        if(freq[i]==0){
+            freq[i]=1;
+            temp.push_back(s[i]);
+            permutations(s,n,temp,freq);
+            freq[i]=0;
+            temp.pop_back();
+        }
+    }
+}
+
+int main() {
+    // Write C++ code here
+    int n=3;
+    string s;
+    cin>>s;
+    vector<char>temp;
+    int freq[3]={0};
+    permutations(s,n,temp,freq);
+    
+
+    return 0;
+}
+0/P:
+I.P:abc
+abc
+acb
+bac
+bca
+cab
+cba
+
+
