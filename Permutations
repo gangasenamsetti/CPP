@@ -1,0 +1,71 @@
+           ***PERMUTATIONS ********
+#include <bits/stdc++.h>
+using namespace std;
+void permutations(int n,int arr[],vector<int>&temp,int freq[])
+{
+    //int n=arr.size();
+    if(temp.size()==n){
+        for(auto it:temp){
+            cout<<it<<" ";
+            
+        }
+    }
+    for(int i=0;i<n;i++){
+        if(freq[i]==0){
+            freq[i]=1;
+            temp.push_back(arr[i]);
+            permutations(n,arr,temp,freq);
+            temp.pop_back();
+            freq[i]=0;
+        }
+    }
+}
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    vector<int>temp;
+    int freq[5]={0};
+    permutations(n,arr,temp,freq); //123 132 213 231 312 321
+    
+
+    return 0;
+}
+
+
+                       **STRING PERMUTATIONS***
+#include <bits/stdc++.h>
+using namespace std;
+void permutations(int n,string &s,string &temp,int freq[])
+{
+    //int n=arr.size();
+    if(temp.size()==n){
+        for(auto it:temp){
+            cout<<it<<" ";
+        }
+    }
+    for(int i=0;i<n;i++){
+        if(freq[i]==0){
+            freq[i]=1;
+            temp.push_back(s[i]);
+            permutations(n,s,temp,freq);
+            temp.pop_back();
+            freq[i]=0;
+        }
+    }
+}
+int main() {
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    string temp="";
+    int freq[5]={0};
+    permutations(n,s,temp,freq); //abc acb bac bca cab
+    
+
+    return 0;
+}
