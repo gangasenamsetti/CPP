@@ -1,0 +1,36 @@
+                              //find function in unordered_set
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+   int arr[]={1,2,3,4,5};
+   int n = sizeof(arr) / sizeof(arr[0]);
+   unordered_set<int>v;
+   int key=3;
+   for(int i=0;i<n;i++){
+       v.insert(arr[i]);
+   }
+   if(v.find(key)!=v.end()) cout<<"YES";
+   else cout<<"NO";
+
+    return 0;
+}
+
+
+                        //find function in vectors
+                        
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+   int arr[]={1,2,3,4,5};
+   int n = sizeof(arr) / sizeof(arr[0]);
+   vector<int>v;
+   int key=3;
+   for(int i=0;i<n;i++){
+       v.push_back(arr[i]);
+   }
+   auto res=find(v.begin(),v.end(),key);
+   if(res!=end(v)) cout<<"YES";
+   else cout<<"NO";
+
+    return 0;
+}
