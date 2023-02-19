@@ -8,6 +8,7 @@
   
              **MAPS***
 **In map,mp[s[i]]-->frequency or anything and s[i]--->element
-**mp[s[i]]-->element but not frequency
+**mp[s[i]]-->element but not frequency ie.mp[s[i]] represents key value which is not duplicate (keys must not be duplicate)
 **mp[s[i]]+=1 -->frequency
   mp[value]+=value
+**
