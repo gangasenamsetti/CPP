@@ -33,4 +33,13 @@ int main() {
    else cout<<"NO";
 
     return 0;
-}
+    
+    
+    
+    
+                        //another way of find function
+ int found = s1.find(s2);
+ //string::npos represents the end of the string
+ if (found != string::npos) return true;
+ else return false;
+
