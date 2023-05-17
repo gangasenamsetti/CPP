@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void SieveOfEratosthenes(int n)
+{
+	vector<bool>prime(n+1,true); //create boolean array containing initially all trues
+	for (int i= 2; i*i<= n; i++) {
+		// If prime[p] is not changed, then it is a prime
+		if (prime[i] == true) { 
+		    //i*i bcz we starts from square of that number ex: for 2 mark square of2=4 ,for 3 square of 3=9
+			for (int j = i*i; j <= n; j+=i)  //j+=i because to mark all factors of that number to false ex: 2,2+2,4+2   3,3+3,6+3...
+				prime[j] = false;
+		}
+	}
+
+	// Print all prime numbers
+	for (int i = 2; i <= n; i++)
+		if (prime[i])
+			cout << i << " ";
+}
+
+// Driver Code
+int main()
+{
+	int n = 100;
+	SieveOfEratosthenes(n);
+	return 0;
+}
