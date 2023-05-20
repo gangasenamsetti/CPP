@@ -29,6 +29,16 @@ class Linkedlist
             head=temp;
         }
     }
+     int length_ll()
+    {
+        Node *temp=head;
+        int cnt=0;
+        while(temp!=NULL){
+            cnt++;
+            temp=temp->next;
+        }
+        return cnt;
+    }
    void insertLast(int val){
         Node *temp = new Node(val);
         if(head==NULL){
@@ -100,9 +110,10 @@ int main() {
    list.insertLast(80);
    list.insert_at_pos(100,3);
    
-   list.deleteFirst();
+   //list.deleteFirst();
    
    list.display();
+    cout<<list.length_ll();
 
     return 0;
 }
