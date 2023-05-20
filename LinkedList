@@ -39,6 +39,17 @@ class Linkedlist
         }
         return cnt;
     }
+    void convert_to_array()
+    {
+        int len=length_ll();
+    Node *temp=head;
+    int arr[len],index=0;
+    while(temp!=NULL){
+        arr[index++]=temp->data;
+        temp=temp->next;
+    }
+    for(int i=0;i<len;i++) cout<<arr[i]<<" ";
+    }
    void insertLast(int val){
         Node *temp = new Node(val);
         if(head==NULL){
@@ -113,7 +124,8 @@ int main() {
    //list.deleteFirst();
    
    list.display();
-    cout<<list.length_ll();
+   cout<<list.length_ll();
+   list.convert_to_array();
 
     return 0;
 }
