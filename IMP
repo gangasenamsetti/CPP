@@ -12,3 +12,8 @@
 **mp[s[i]]+=1 -->frequency
   mp[value]+=value
 **
+
+
+    **TO READ A LINE OF SENTENCE OF STRING IN CPP**
+string s;
+getline(cin,s);
