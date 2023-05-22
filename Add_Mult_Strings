@@ -1,0 +1,63 @@
+class Solution {
+public:
+    //function for addition of two strings
+string sumstr(string s1,string s2){
+       string ans = "";
+       int L1 = s1.length()-1,L2 = s2.length()-1;
+       int prev_carry = 0;
+       while(L1>=0||L2>=0){
+           int curr_sum = 0;
+           if(L1>=0){
+            curr_sum += s1[L1--]-'0';
+           }
+           if(L2>=0){
+               curr_sum += s2[L2--]-'0';
+           }
+           curr_sum += prev_carry;
+           ans.push_back(curr_sum%10+'0');
+           prev_carry = curr_sum/10;
+       }
+       if(prev_carry>0){
+           ans.push_back(prev_carry+'0');
+       }
+       reverse(ans.begin(),ans.end());
+    return ans;
+   }
+
+//function for multiplication
+    string multiply(string num1, string num2) {
+       int l1 = num1.length(),l2 = num2.length();
+       if(l1==1){
+           if(num1[0]=='0')
+           return "0";
+           
+       }
+       if(l2==1){
+           if(num2[0]=='0')
+           return "0";
+       }
+       string final_str = "";
+       int cnt = 0;
+       for(int i=l1-1;i>=0;i--){
+           string temp = "";
+           int l_cnt = cnt;
+           while(l_cnt>0){
+              temp.push_back('0');
+              l_cnt--;
+           }
+		   cnt++;
+           int carry = 0;
+           for(int j = l2-1;j>=0;j--){
+               int mltply = (num2[j]-'0')*(num1[i]-'0')+carry;
+               temp.push_back((mltply%10)+'0');
+                carry = mltply/10;
+           }
+           if(carry>0){
+               temp.push_back(carry+'0');
+           }
+           reverse(temp.begin(),temp.end());
+           final_str = sumstr(final_str,temp);
+       }
+        return final_str;
+    }
+};
