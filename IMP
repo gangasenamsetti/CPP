@@ -9,7 +9,14 @@
   
   //DELETE LAST CHARCATER FROM A STRING
   res.erase(res.size()-1);
-  
+
+//delete a particular character from a string
+for(int i=0;i<s.size();i++){
+        if(!isdigit(s[i]) and !isalpha(s[i])){
+            s.erase(remove(s.begin(),s.end(),s[i]));
+        }
+    }
+
   
              **MAPS***
 **In map,mp[s[i]]-->frequency or anything and s[i]--->element
