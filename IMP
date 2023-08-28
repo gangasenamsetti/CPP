@@ -17,6 +17,9 @@ string s;//13
 
 //stoi function is also used to convert string to integer
 
+//no of digits in a number---->floor(log10(num)+1)
+  or convert it to string and then find size
+
   
   
   //DELETE LAST CHARCATER FROM A STRING
