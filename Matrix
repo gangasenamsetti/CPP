@@ -47,3 +47,41 @@ int main()
     }
     cout<<s;
 }
+
+
+
+//Spiral traversal of matrix 
+//https://www.youtube.com/watch?v=3Zv-s9UUrFM
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    int mat[n][n];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>mat[i][j];
+        }
+    }
+    int top=0,bottom=n-1,left=0,right=n-1;
+while(top<=right and left<=right){ //if still any rows and colums are left iterate
+    for(int i=left;i<=right;i++){
+        cout<<mat[top][i]<<" ";
+    }
+    top+=1;
+    for(int i=top;i<=bottom;i++){
+        cout<<mat[i][right]<<" ";
+    }
+    right-=1;
+    for(int i=right;i>=left;i--){
+        cout<<mat[bottom][i]<<" ";
+    }
+    bottom-=1;
+    for(int i=bottom;i>=top;i--){
+        cout<<mat[i][left]<<" ";
+    }
+    left+=1;
+    }
+}
