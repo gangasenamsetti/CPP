@@ -36,3 +36,26 @@ int main() {
 
     return 0;
 }
+
+
+//LCM OF 2 NUMBERS
+#include <bits/stdc++.h>
+using namespace std;
+int gcd(int a,int b){
+    if(a==0) return b;
+    if(b==0) return a;
+    if(a==b) return a;
+    if(a>b){
+        return gcd(a-b,b);
+    }
+    return gcd(a,b-a);
+}
+int main() {
+    //a*b=lcm(a,b)*gcd(a,b)
+    //lcm(a,b)=(a*b)/gcd(a,b)
+    int a,b;
+    cin>>a>>b;
+    cout<<(a*b)/gcd(a,b);
+
+    return 0;
+}
