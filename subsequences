@@ -1,3 +1,4 @@
+***PRINTING SUBSEQUENCES IN AN ARRAY UAING RECURSION***
 #include <bits/stdc++.h>
 using namespace std;
 void subsequences(int arr[],vector<int>&dp,int ind,int n){
@@ -31,3 +32,40 @@ o/p:
 2 3 
 2 
 
+
+
+
+**** SUBSEQUENCES WHOSE SUM IS K USING RECURSION****
+#include <bits/stdc++.h>
+using namespace std;
+void subsequences(int arr[],vector<int>&dp,int ind,int n,vector<int>&ans){
+    int s=0;
+    if(ind==n){
+        for(auto it:dp){
+            s+=it;
+            ans.push_back(s);
+        }
+        cout<<endl;
+        return;
+    }
+    dp.push_back(arr[ind]);
+    subsequences(arr,dp,ind+1,n,ans); //pick call
+    dp.pop_back();
+    subsequences(arr,dp,ind+1,n,ans); //unpick call
+}
+bool fun(vector<int>&ans,int key,int arr[],vector<int>&dp,int ind,int n){
+    subsequences(arr,dp,ind,n,ans);
+    for(auto it:ans){
+        if(it==key) return true;
+    }
+    return false;
+}
+int main() {
+    int arr[]={1,2,3};
+    int n=3;
+    int ind;
+    vector<int>dp,ans;
+    int k=6;
+    cout<<fun(ans,k,arr,dp,0,n);
+    return 0;
+}
