@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+void subsequences(int arr[],vector<int>&dp,int ind,int n){
+    if(ind==n){
+        for(auto it:dp){
+            cout<<it<<" ";
+        }
+        cout<<endl;
+        return;
+    }
+    dp.push_back(arr[ind]);
+    subsequences(arr,dp,ind+1,n); //pick call
+    dp.pop_back();
+    subsequences(arr,dp,ind+1,n); //unpick call
+}
+int main() {
+    int arr[]={1,2,3};
+    int n=3;
+    int ind=0;
+    vector<int>dp;
+    subsequences(arr,dp,0,n);
+
+    return 0;
+}
+
+o/p:
+1 2 3 
+1 2 
+1 3 
+1 
+2 3 
+2 
+
